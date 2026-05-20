@@ -1,4 +1,17 @@
-export default function about(){
+import ButtonComponent from "./button";
 
-    return <div> about page</div>
+export default async function about()
+{
+    console.log("is this a server or client");
+
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const posts = await response.json();
+    console.log(posts);
+
+    return(
+        <div>
+           <ButtonComponent />
+        </div>
+    )
+
 }
